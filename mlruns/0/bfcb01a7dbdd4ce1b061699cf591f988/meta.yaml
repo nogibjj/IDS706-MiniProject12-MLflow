@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ericyin/Desktop/IDS706/Mini/IDS706-MiniProject12-MLflow/mlruns/0/bfcb01a7dbdd4ce1b061699cf591f988/artifacts
+end_time: 1700457294031
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: bfcb01a7dbdd4ce1b061699cf591f988
+run_name: nimble-owl-274
+run_uuid: bfcb01a7dbdd4ce1b061699cf591f988
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700457284811
+status: 4
+tags: []
+user_id: ericyin
