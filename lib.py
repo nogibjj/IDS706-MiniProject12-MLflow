@@ -30,6 +30,7 @@ def load_data():
 
 
 def create_model():
+    # pylint: disable=no-member
     model = tf.keras.models.Sequential([
         tf.keras.layers.Flatten(input_shape=(28, 28)),
         tf.keras.layers.Dense(128, activation='relu'),
@@ -40,4 +41,5 @@ def create_model():
         loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
         metrics=[tf.keras.metrics.SparseCategoricalAccuracy()],
     )
+    # pylint: enable=no-member
     return model
