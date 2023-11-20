@@ -1,33 +1,32 @@
 import mlflow
 import mlflow.tensorflow
 import lib
-import tensorflow as tf
 
 with mlflow.start_run():
     # Load data
-    (x_train, y_train), (x_test, y_test) = lib.load_data()
+    ds_train, ds_test = lib.load_data()
 
     # Create model
     model = lib.create_model()
 
-    # Compile model
-    model.compile(optimizer='adam',
-                  loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-                  metrics=['accuracy'])
-
     # Train model
-    history = model.fit(x_train, y_train, epochs=5, validation_data=(x_test, y_test))
+    history = model.fit(
+        ds_train,
+        epochs=6,
+        validation_data=ds_test,
+    )
 
-    # Log parameters and results
-    mlflow.log_param("epochs", 5)
-    mlflow.log_metric("train_accuracy", history.history['accuracy'][-1])
-    mlflow.log_metric("val_accuracy", history.history['val_accuracy'][-1])
+    # Log parameters and metrics
+    mlflow.log_param("epochs", 6)
+    mlflow.log_metric("train_accuracy", history.history['sparse_categorical_accuracy'][-1])
+    mlflow.log_metric("val_accuracy", history.history['val_sparse_categorical_accuracy'][-1])
 
-    # Assuming x_test is your test dataset and model is your trained model
-    predictions = model.predict(x_test)
+    # Prepare a sample input for signature inference
+    sample_input, _ = next(iter(ds_test.take(1)))
+    sample_prediction = model.predict(sample_input)
 
     # Infer the signature
-    signature = mlflow.models.infer_signature(x_test, predictions)
+    signature = mlflow.models.infer_signature(sample_input.numpy(), sample_prediction)
 
     # Log the model with the signature
     mlflow.tensorflow.log_model(model, artifact_path="model", signature=signature)

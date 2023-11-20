@@ -14,10 +14,14 @@
 2. Tensorflow 2.5.0 or above
 3. mlflow 1.19.0 or above
 2. Set Up MLflow: Install MLflow (pip install mlflow). Ensure you have an MLflow tracking server or use the default local file system to store data. 
-2. Run the Project: Execute main.py. It will run the model and track the experiment with MLflow. 
+2. Run the Project: Execute main.py. It will run the model and track the experiment with MLflow.
+3. view and load ML models saved in `mlruns` folder
 
 ## Run and Result
 
+This project I use the `mnist` dataset to train a simple CNN model. The model is saved in `mlruns` folder. 
+- 6 epochs training result
+- 
 ![img.png](img.png)
 
 ## Reference

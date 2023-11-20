@@ -1,0 +1,15 @@
+artifact_uri: file:///Users/ericyin/Desktop/IDS706/Mini/IDS706-MiniProject12-MLflow/mlruns/0/0367d67c08b8464692ada34068226357/artifacts
+end_time: 1700459054445
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0367d67c08b8464692ada34068226357
+run_name: invincible-fawn-759
+run_uuid: 0367d67c08b8464692ada34068226357
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1700459043461
+status: 3
+tags: []
+user_id: ericyin
