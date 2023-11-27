@@ -19,9 +19,10 @@
 
 ## Run and Result
 
-This project I use the `mnist` dataset to train a simple CNN model. The model is saved in `mlruns` folder. 
-- 6 epochs training result
-- 
+This project I use the `mnist` dataset to train a simple CNN model. The model is saved in `mlruns` folder.
+
+The training progress is shown below:
+
 ![img.png](img.png)
 
 ## Reference
